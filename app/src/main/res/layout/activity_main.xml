@@ -8,28 +8,26 @@
     tools:context=".MainActivity"
     tools:layout_editor_absoluteY="25dp">
 
-    <EditText
-        android:id="@+id/messageView"
-        android:layout_width="347dp"
-        android:layout_height="180dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="350dp"
+        android:layout_height="152dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginTop="8dp"
         android:text="Today is April 15 Saturday\nI know you can do your ToDoList!"
         android:textAlignment="center"
-        android:textAllCaps="false"
+        android:textColor="@android:color/black"
         android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.087" />
+
 
     <View
-        android:layout_width="335dp"
+        android:id="@+id/view"
+        android:layout_width="337dp"
         android:layout_height="1dp"
         android:layout_centerInParent="true"
         android:layout_marginBottom="8dp"
@@ -43,21 +41,28 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.321" />
+        app:layout_constraintVertical_bias="0.26" />
 
     <TextView
         android:id="@+id/label"
         android:layout_width="250dp"
         android:layout_height="29dp"
-        android:layout_marginBottom="4dp"
-        android:layout_marginEnd="76dp"
-        android:layout_marginRight="76dp"
+        android:layout_marginBottom="16dp"
+        android:layout_marginEnd="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
         android:text="What are you going to do today!"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:textStyle="italic"
         app:layout_constraintBottom_toTopOf="@+id/plan1"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.756"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="1.0" />
 
     <CheckBox
         android:id="@+id/checkBox1"
@@ -85,6 +90,7 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
 
@@ -125,7 +131,7 @@
     <EditText
         android:id="@+id/plan3"
         android:layout_width="311dp"
-        android:layout_height="wrap_content"
+        android:layout_height="45dp"
         android:layout_marginEnd="16dp"
         android:layout_marginLeft="17dp"
         android:layout_marginRight="16dp"
@@ -137,5 +143,32 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/checkBox3" />
+
+    <CheckBox
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+
+    <EditText
+        android:id="@+id/addText"
+        android:layout_width="311dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginLeft="17dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginStart="17dp"
+        android:ems="10"
+        android:hint="Add your plan!"
+        android:inputType="textPersonName"
+        android:textSize="18sp"
+        app:layout_constraintBaseline_toBaselineOf="@+id/addButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/addButton" />
 
 </android.support.constraint.ConstraintLayout>
