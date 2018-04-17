@@ -47,128 +47,105 @@
         android:id="@+id/label"
         android:layout_width="250dp"
         android:layout_height="29dp"
-        android:layout_marginBottom="16dp"
         android:layout_marginEnd="48dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="48dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="52dp"
         android:text="What are you going to do today!"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:textStyle="italic"
-        app:layout_constraintBottom_toTopOf="@+id/plan1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
-    <CheckBox
-        android:id="@+id/checkBox1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="264dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <CheckBox
-        android:id="@+id/checkBox2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
-
-    <CheckBox
-        android:id="@+id/checkBox3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
-
-    <EditText
-        android:id="@+id/plan1"
-        android:layout_width="311dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="17dp"
-        android:ems="10"
-        android:hint="What are you going to do today?"
-        android:inputType="textPersonName"
-        android:text="Go to school"
-        app:layout_constraintBaseline_toBaselineOf="@+id/checkBox1"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="370dp"
+        android:layout_height="360dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginRight="4dp"
+        android:layout_marginStart="4dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/checkBox1" />
-
-    <EditText
-        android:id="@+id/plan2"
-        android:layout_width="311dp"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="17dp"
-        android:ems="10"
-        android:hint="What are you going to do today?"
-        android:inputType="textPersonName"
-        android:text="Do homework"
-        app:layout_constraintBaseline_toBaselineOf="@+id/checkBox2"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/checkBox2" />
-
-    <EditText
-        android:id="@+id/plan3"
-        android:layout_width="311dp"
-        android:layout_height="45dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="17dp"
-        android:ems="10"
-        android:hint="What are you going to do today?"
-        android:inputType="textPersonName"
-        app:layout_constraintBaseline_toBaselineOf="@+id/checkBox3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/checkBox3" />
-
-    <CheckBox
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="4dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/checkBox3" />
+        app:layout_constraintTop_toBottomOf="@+id/label">
 
-    <EditText
-        android:id="@+id/addText"
-        android:layout_width="311dp"
-        android:layout_height="48dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="17dp"
-        android:layout_marginRight="16dp"
-        android:layout_marginStart="17dp"
-        android:ems="10"
-        android:hint="Add your plan!"
-        android:inputType="textPersonName"
-        android:textSize="18sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/addButton"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/addButton" />
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="370dp"
+            android:layout_height="500dp"
+            android:orientation="vertical">
 
+            <CheckBox
+                android:id="@+id/checkBox1"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <CheckBox
+                android:id="@+id/checkBox2"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox1" />
+
+            <CheckBox
+                android:id="@+id/checkBox3"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox2" />
+
+            <TextView
+                android:id="@+id/plan1"
+                android:layout_width="300dp"
+                android:layout_height="23dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Do my homework"
+                app:layout_constraintBaseline_toBaselineOf="@+id/checkBox1"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/checkBox1" />
+
+            <TextView
+                android:id="@+id/plan2"
+                android:layout_width="300dp"
+                android:layout_height="23dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Go to School"
+                app:layout_constraintBaseline_toBaselineOf="@+id/checkBox2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/checkBox2" />
+
+            <TextView
+                android:id="@+id/plan3"
+                android:layout_width="300dp"
+                android:layout_height="23dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginStart="8dp"
+                android:text="Go to sleep"
+                app:layout_constraintBaseline_toBaselineOf="@+id/checkBox3"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/checkBox3" />
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 </android.support.constraint.ConstraintLayout>

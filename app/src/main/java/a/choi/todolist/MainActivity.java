@@ -12,12 +12,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        CheckBox add = (CheckBox)findViewById(R.id.addButton);
-        add.setOnClickListener(new CheckBox.OnClickListener(){
-            @Override
-            public void onClick(View v){
-
-            }
-        });
     }
 }
