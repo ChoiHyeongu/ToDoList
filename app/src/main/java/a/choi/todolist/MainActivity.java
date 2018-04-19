@@ -19,16 +19,5 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final ConstraintLayout layout = (ConstraintLayout)findViewById(R.id.addLayout);
-
-        Button addButton=(Button)findViewById(R.id.addButton);
-        addButton.setOnClickListener(new Button.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                LayoutInflater inflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                ConstraintLayout plan_textVview=(ConstraintLayout)inflater.inflate(R.layout.plan_textview,null);
-                layout.addView(plan_textVview);
-            }
-        });
     }
 }
