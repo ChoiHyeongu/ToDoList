@@ -11,22 +11,35 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity {
 
+    int count = 1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final LinearLayout inLayout = (LinearLayout) findViewById(R.id.planLayout);
-        ImageButton btn = (ImageButton) findViewById(R.id.addButton);
+        firstButton();
 
-        btn.setOnClickListener(new Button.OnClickListener() {
+        final LinearLayout inLayout = (LinearLayout) findViewById(R.id.planLayout);
+        final LinearLayout planView = (LinearLayout) findViewById(R.id.planLayout);
+        ImageButton add = (ImageButton) findViewById(R.id.addButton);
+
+        add.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
-                LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-                LinearLayout planView = (LinearLayout) findViewById(R.id.planLayout);
-                inflater.inflate(R.layout.plan_textview, planView, true);
+                if(count >= 5){}else {
+                    LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                    inflater.inflate(R.layout.plan_textview, planView, true);
+                    count++;
+                }
             }
         });
     }
-}
 
+    public void firstButton() {
+        final LinearLayout planView = (LinearLayout) findViewById(R.id.planLayout);
+        LayoutInflater inflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+        inflater.inflate(R.layout.plan_textview, planView, true);
+    }
+}

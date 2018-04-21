@@ -9,7 +9,7 @@
     tools:layout_editor_absoluteY="25dp">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/moodView"
         android:layout_width="350dp"
         android:layout_height="152dp"
         android:layout_marginBottom="8dp"
@@ -26,7 +26,7 @@
 
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/line"
         android:layout_width="337dp"
         android:layout_height="1dp"
         android:layout_centerInParent="true"
@@ -59,18 +59,18 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/line" />
 
     <LinearLayout
         android:id="@+id/planLayout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
+        android:layout_marginBottom="5dp"
         android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="4dp"
+        android:layout_marginTop="5sp"
         android:orientation="vertical"
         android:weightSum="10"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -98,4 +98,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.81"
         app:layout_constraintStart_toStartOf="parent" />
+
 </android.support.constraint.ConstraintLayout>
