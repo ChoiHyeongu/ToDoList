@@ -23,5 +23,14 @@
         android:ems="10"
         android:hint="What are you goint to do"
         android:inputType="text"
-        android:textSize="12sp" />
+        android:textSize="16sp" />
+
+    <ImageButton
+        android:id="@+id/delButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="#FFFFFF"
+        android:layout_marginTop="11sp"
+        android:src="@drawable/erase_image" />
 </LinearLayout>
