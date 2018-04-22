@@ -55,12 +55,10 @@ public class ListViewAdapter extends BaseAdapter {
         return listViewItemList.get(position);
     }
 
-    public void addItem(String planStr, Drawable deleteImage){
+    public void addItem(String planStr){
 
         ListViewItem item = new ListViewItem();
-
         item.setPlan(planStr);
-
         listViewItemList.add(item);
     }
 }

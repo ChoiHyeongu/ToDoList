@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         dateSet();
 
         //ListView
-        ListView listview;
+        final ListView listview;
         final ListViewAdapter adapter;
 
         adapter = new ListViewAdapter();
@@ -34,7 +34,8 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
-                adapter.addItem("GOGOGOOGO", ContextCompat.getDrawable(getApplicationContext(),R.drawable.erase_image));
+                adapter.addItem("Go to School");
+                adapter.notifyDataSetChanged();
             }
         });
 
