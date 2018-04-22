@@ -8,6 +8,12 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+import java.util.Locale;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,12 +25,12 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        firstButton();
-
         final LinearLayout inLayout = (LinearLayout) findViewById(R.id.planLayout);
         final LinearLayout planView = (LinearLayout) findViewById(R.id.planLayout);
-        ImageButton add = (ImageButton) findViewById(R.id.addButton);
+        final ImageButton add = (ImageButton) findViewById(R.id.addButton);
 
+        firstButton();
+        dateSet();
         add.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -35,6 +41,83 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    public void dateSet(){
+
+        TextView mood = (TextView) findViewById(R.id.moodView);
+        Calendar today = Calendar.getInstance();
+        int cal_month = (today.get(Calendar.MONTH) + 1);
+        int cal_day_of_week = (today.get(Calendar.DAY_OF_WEEK));
+        int day = (today.get(Calendar.DAY_OF_MONTH));
+        String month = null, day_of_week = null;
+
+        switch (cal_month) {
+
+            case 1:
+                month = "January";
+                break;
+            case 2:
+                month = "February";
+                break;
+            case 3:
+                month = "March";
+                break;
+            case 4:
+                month = "April";
+                break;
+            case 5:
+                month = "May";
+                break;
+            case 6:
+                month = "June";
+                break;
+            case 7:
+                month = "July";
+                break;
+            case 8:
+                month = "August";
+                break;
+            case 9:
+                month = "September";
+                break;
+            case 10:
+                month = "October";
+                break;
+            case 11:
+                month = "November";
+                break;
+            case 12:
+                month = "December";
+                break;
+        }
+
+        switch (cal_day_of_week){
+
+            case 1:
+                day_of_week = "Sunday";
+                break;
+            case 2:
+                day_of_week = "Sunday";
+                break;
+            case 3:
+                day_of_week = "Sunday";
+                break;
+            case 4:
+                day_of_week = "Sunday";
+                break;
+            case 5:
+                day_of_week = "Sunday";
+                break;
+            case 6:
+                day_of_week = "Sunday";
+                break;
+            case 7:
+                day_of_week = "Sunday";
+                break;
+        }
+
+        mood.setText("Today is " + day_of_week + ", " + month +", " + day +"\nI know you can do your ToDoList!");
     }
 
     public void firstButton() {
