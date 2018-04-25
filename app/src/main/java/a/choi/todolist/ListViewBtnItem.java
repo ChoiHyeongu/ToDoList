@@ -1,8 +1,6 @@
 package a.choi.todolist;
 
-import android.graphics.drawable.Drawable;
-
-public class ListViewItem {
+public class ListViewBtnItem {
 
     private String planStr;
 

@@ -1,14 +1,18 @@
 package a.choi.todolist;
 
-import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,12 +25,9 @@ public class MainActivity extends AppCompatActivity {
         dateSet();
 
         //ListView
-        final ListView listview;
-        final ListViewAdapter adapter;
-
-        adapter = new ListViewAdapter();
-
-        listview = (ListView) findViewById(R.id.listView);
+        final ArrayList<String> items = new ArrayList<String>();
+        final ArrayAdapter adapter = new ArrayAdapter(this, android.R.layout.simple_list_item_single_choice);
+        final ListView listview = (ListView) findViewById(R.id.listView);
         listview.setAdapter(adapter);
 
         //addButton Click
@@ -34,13 +35,14 @@ public class MainActivity extends AppCompatActivity {
         add.setOnClickListener(new ImageButton.OnClickListener(){
             @Override
             public void onClick(View v){
-                adapter.addItem("Go to School");
+                //Add item
+                int count = 0;
+                items.add("What are you going to do?");
                 adapter.notifyDataSetChanged();
+                count++;
             }
         });
-
     }
-
     public void dateSet() {
 
         TextView mood = (TextView) findViewById(R.id.moodView);

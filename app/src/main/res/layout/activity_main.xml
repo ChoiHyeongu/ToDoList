@@ -46,18 +46,19 @@
     <TextView
         android:id="@+id/label"
         android:layout_width="250dp"
-        android:layout_height="29dp"
-        android:layout_marginEnd="48dp"
+        android:layout_height="37dp"
+        android:layout_marginBottom="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginRight="48dp"
+        android:layout_marginRight="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="52dp"
         android:text="What are you going to do today!"
         android:textAllCaps="true"
         android:textColor="@android:color/black"
         android:textStyle="italic"
+        app:layout_constraintBottom_toTopOf="@+id/listView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.756"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/line" />
 
