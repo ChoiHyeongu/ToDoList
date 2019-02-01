@@ -9,6 +9,8 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
 
+    var todoList: ArrayList<TodoItem> = arrayListOf()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -33,10 +35,8 @@ class MainActivity : AppCompatActivity() {
 
     fun initTodoData(): ArrayList<TodoItem> {
 
-        var todoList: ArrayList<TodoItem> = arrayListOf()
-
         for (i in 1..5)
-            todoList.add(TodoItem("Title$i", true))
+            todoList.add(TodoItem("Title$i", false))
 
         return todoList
     }
