@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
-import android.widget.LinearLayout
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -32,12 +31,12 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    fun initTodoData(): ArrayList<ToDo> {
+    fun initTodoData(): ArrayList<TodoItem> {
 
-        var todoList: ArrayList<ToDo> = arrayListOf()
+        var todoList: ArrayList<TodoItem> = arrayListOf()
 
         for (i in 1..5)
-            todoList.add(ToDo("Title$i"))
+            todoList.add(TodoItem("Title$i", true))
 
         return todoList
     }
