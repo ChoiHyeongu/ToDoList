@@ -1,4 +1,4 @@
-# ToDoList
-Android Studio를 이용한 ToDoList
+# ToDo App
 
-After making Meal-bug 
+Language : Kotlin
+IDE      : Android Studio
