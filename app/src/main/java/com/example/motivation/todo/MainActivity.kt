@@ -11,6 +11,7 @@ import android.util.Log
 import android.util.Log.d
 import android.widget.EditText
 import android.widget.Toast
+import android.widget.Toolbar
 
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -23,6 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         setSupportActionBar(toolbar)
+        toolbar.title = "TO Do List"
 
         fab.setOnClickListener { view ->
             showAddListDialog()
@@ -33,7 +35,7 @@ class MainActivity : AppCompatActivity() {
 
     fun initRecyclerView() {
 
-        todoListAdapter = RecyclerViewAdapter(initTodoData())
+        todoListAdapter = RecyclerViewAdapter(initTodoData(), this)
 
         main_todolist.layoutManager = LinearLayoutManager(applicationContext)
         main_todolist.adapter = todoListAdapter
@@ -42,11 +44,12 @@ class MainActivity : AppCompatActivity() {
     fun initTodoData(): ArrayList<TodoItem> {
 
         val dbHelper = DBHelper(this)
+        dbHelper.onCreate(dbHelper.writableDatabase)
         val db = dbHelper.writableDatabase
         val cursor = db.rawQuery("select * from todolist", null)
 
         val count = cursor.count
-        if(count >= 1) {
+        if (count >= 1) {
             while (cursor.moveToNext()) {
                 val title = cursor.getString(0)
                 todoList.add(TodoItem(title, false))
@@ -66,10 +69,10 @@ class MainActivity : AppCompatActivity() {
         builder.setMessage("할 일을 적으세요.")
         builder.setView(titleEdit)
         builder.setPositiveButton("확인") { _, _ ->
-            db.execSQL("insert into todolist values (\'${titleEdit.text}\')");
+            db.execSQL("insert into todolist values (\'${titleEdit.text}\')")
             Toast.makeText(this, "Todo 생성 완료", Toast.LENGTH_LONG).show()
+            todoList.add(TodoItem(titleEdit.text.toString(), false))
             todoListAdapter!!.notifyItemInserted(todoList.size)
-            todoListAdapter!!.notifyDataSetChanged()
         }
         builder.setNegativeButton("취소") { _, _ -> }
         builder.show()

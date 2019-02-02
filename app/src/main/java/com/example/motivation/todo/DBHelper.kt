@@ -11,7 +11,7 @@ class DBHelper(context: Context) : SQLiteOpenHelper(context, "todo.db", null, VE
     }
 
     override fun onCreate(db: SQLiteDatabase?) {
-        val query = "create table todolist(" +
+        val query = "create table  if not exists todolist(" +
                 "title varchar(100) not null" +
                 ");"
         db?.execSQL(query)
